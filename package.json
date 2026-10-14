@@ -19,7 +19,12 @@
   },
   "homepage": "https://github.com/Yahyalt/bulk-registration-on-Web-Tables-Cypress#readme",
   "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.3.1",
     "cypress": "^16.1.1",
+    "cypress-real-events": "^1.15.1",
     "papaparse": "^5.7.0"
+  },
+  "allowScripts": {
+    "cypress@16.1.1": true
   }
 }
