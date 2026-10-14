@@ -35,12 +35,12 @@ class WebTablesPage {
   }
 
   fillForm(user) {
-    this.firstNameInput.type(user.firstName);
-    this.lastNameInput.type(user.lastName);
-    this.emailInput.type(user.email);
-    this.ageInput.type(user.age);
-    this.salaryInput.type(user.salary);
-    this.departmentInput.type(user.department);
+    if (user.firstName) this.firstNameInput.type(user.firstName);
+    if (user.lastName) this.lastNameInput.type(user.lastName);
+    if (user.email) this.emailInput.type(user.email);
+    if (user.age) this.ageInput.type(user.age);
+    if (user.salary) this.salaryInput.type(user.salary);
+    if (user.department) this.departmentInput.type(user.department);
   }
 
   submit() {
@@ -56,6 +56,30 @@ class WebTablesPage {
   // assertion helper
   verifyUserInTable(user) {
     cy.get("tbody").should("contain", user.email);
+  }
+
+  get form() {
+    return cy.get("#userForm");
+  }
+  get closeModalButton() {
+    return cy.get("button[aria-label='Close']");
+  }
+
+  closeModal() {
+    this.closeModalButton.click();
+  }
+
+  verifyFieldInvalid(selector) {
+    cy.get(`${selector}:invalid`).should("exist");
+  }
+
+  verifyValidationShown() {
+    this.form.should("have.class", "was-validated");
+    cy.get(".modal-content").should("be.visible"); // modal stays open
+  }
+
+  verifyUserNotInTable(text) {
+    cy.contains('[role="row"]', text).should("not.exist");
   }
 }
 

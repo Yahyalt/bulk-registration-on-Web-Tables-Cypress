@@ -1,0 +1,26 @@
+{
+  "emptyEmail": {
+    "firstName": "NoEmail",
+    "lastName": "Test",
+    "email": "",
+    "age": "30",
+    "salary": "5000",
+    "department": "QA"
+  },
+  "alphaAge": {
+    "firstName": "AlphaAge",
+    "lastName": "Test",
+    "email": "alpha@mail.com",
+    "age": "abc",
+    "salary": "5000",
+    "department": "QA"
+  },
+  "emptySalary": {
+    "firstName": "NoSalary",
+    "lastName": "Test",
+    "email": "salary@mail.com",
+    "age": "30",
+    "salary": "",
+    "department": "QA"
+  }
+}
